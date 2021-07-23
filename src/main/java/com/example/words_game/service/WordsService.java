@@ -13,8 +13,10 @@ public class WordsService {
     }
 
     public WordsDto evaluateWordsList(WordsDto wordsInput) {
+
         List<String> wordsInputList = wordsInput.getWords();
         List<String> wordsOutputList = new ArrayList<>();
+
         if (wordsInputList.get(0).equals("")) {
             return new WordsDto(wordsOutputList);
         }
@@ -28,6 +30,7 @@ public class WordsService {
 
             char lastLetter = wordsInputList.get(i).charAt(wordsInputList.get(i).length() - 1);
             char firstLetter = wordsInputList.get(i + 1).charAt(0);
+
             if (lastLetter == firstLetter) {
                 wordsOutputList.add(wordsInputList.get(i + 1));
             }
